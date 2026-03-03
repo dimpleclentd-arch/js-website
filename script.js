@@ -1,25 +1,8 @@
-function toggleTree(id, button) {
-  let element = document.getElementById(id);
-
-  if (element.classList.contains("hidden")) {
-    element.classList.remove("hidden");
-    button.textContent = button.textContent.replace("▶", "▼");
-  } else {
-    element.classList.add("hidden");
-    button.textContent = button.textContent.replace("▼", "▶");
-  }
+function showSection(section) {
+  let sections = [
+    "homeSection","aboutSection","contactSection",
+    "exercise1","exercise2","exercise3"
+  ];
+  sections.forEach(id => document.getElementById(id).classList.add("hidden"));
+  document.getElementById(section).classList.remove("hidden");
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("btn-ex1").addEventListener("click", function() {
-    toggleTree("exercise1", this);
-  });
-
-  document.getElementById("btn-ex2").addEventListener("click", function() {
-    toggleTree("exercise2", this);
-  });
-
-  document.getElementById("btn-ex3").addEventListener("click", function() {
-    toggleTree("exercise3", this);
-  });
-});
