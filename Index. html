@@ -15,15 +15,8 @@
   <main>
     <ul>
       <li>
-        <button id="btn-ex1">▶ Exercise 1</button>
+        <button onclick="toggleTree('exercise1')">▶ Exercise 1</button>
         <ul id="exercise1" class="hidden">
-          <li>Basic HTML: header, menu bar, slide menu, content, footer</li>
-        </ul>
-      </li>
-
-      <li>
-        <button id="btn-ex2">▶ Exercise 2</button>
-        <ul id="exercise2" class="hidden">
           <li>Activity 1: First JavaScript Output</li>
           <li>Activity 2: Variables and Data Types</li>
           <li>Activity 3: Simple Calculator</li>
@@ -35,7 +28,14 @@
       </li>
 
       <li>
-        <button id="btn-ex3">▶ Exercise 3</button>
+        <button onclick="toggleTree('exercise2')">▶ Exercise 2</button>
+        <ul id="exercise2" class="hidden">
+          <li>(Activities to be added later)</li>
+        </ul>
+      </li>
+
+      <li>
+        <button onclick="toggleTree('exercise3')">▶ Exercise 3</button>
         <ul id="exercise3" class="hidden">
           <li>Activity 1: Change Background Color</li>
           <li>Activity 2: Dark Mode Toggle</li>
