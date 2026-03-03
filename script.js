@@ -1,15 +1,12 @@
-function showTab(tabId) {
-  // Hide all tabs
-  let tabs = document.getElementsByClassName("tab");
-  for (let i = 0; i < tabs.length; i++) {
-    tabs[i].style.display = "none";
+function toggleTree(id) {
+  let element = document.getElementById(id);
+  let button = document.querySelector(`button[onclick*="${id}"]`);
+
+  if (element.classList.contains("hidden")) {
+    element.classList.remove("hidden");
+    button.textContent = button.textContent.replace("▶", "▼");
+  } else {
+    element.classList.add("hidden");
+    button.textContent = button.textContent.replace("▼", "▶");
   }
-
-  // Show the selected tab
-  document.getElementById(tabId).style.display = "block";
 }
-
-// Open Home tab by default when the page loads
-document.addEventListener("DOMContentLoaded", function() {
-  showTab("home");
-});
