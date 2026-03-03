@@ -1,38 +1,46 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #fdfdfd;
   color: #333;
 }
 
+/* Header */
 .header {
-  background-color: #e0e0e0;
+  background-color: #f8cdd4; /* soft baby pink */
   text-align: center;
   padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Menu Bar */
 .menu-bar {
-  background-color: #333;
-  overflow: hidden;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
 }
 .menu-bar a {
-  float: left;
-  display: block;
-  color: white;
+  color: #333;
   padding: 14px 20px;
   text-decoration: none;
 }
 .menu-bar a:hover {
-  background-color: #555;
+  background-color: #f8cdd4;
+  border-radius: 4px;
 }
 
+/* Slide Menu */
 .slide-menu {
   width: 220px;
   float: left;
-  background-color: #f0f0f0;
+  background-color: #fef0f2;
   padding: 15px;
   min-height: 500px;
-  box-shadow: 0 0 5px #ccc;
+  border-right: 1px solid #ddd;
+}
+.slide-menu h3 {
+  margin-top: 0;
 }
 .slide-menu ul {
   list-style-type: none;
@@ -41,23 +49,26 @@ body {
 .slide-menu li {
   margin: 10px 0;
 }
-button {
-  background-color: #dcdcdc;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
+.slide-menu a {
+  text-decoration: none;
+  color: #333;
 }
-button:hover {
-  background-color: #b0b0b0;
-  color: white;
+.slide-menu a:hover {
+  color: #ff69b4;
 }
 
+/* Content */
+.content {
+  margin-left: 240px;
+  padding: 20px;
+}
 .hidden {
   display: none;
 }
 
+/* Footer */
 .footer {
-  background-color: #e0e0e0;
+  background-color: #f8cdd4;
   text-align: center;
   padding: 10px;
   position: fixed;
