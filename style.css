@@ -1,16 +1,25 @@
-/* Global layout */
-body {
+/* Reset */
+* {
   margin: 0;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background: #fff;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
   color: #333;
+  line-height: 1.6;
 }
 
 /* Header & Footer */
 .header, .footer {
   text-align: center;
   padding: 20px;
+  background: #fff;
   border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .footer {
   border-top: 1px solid #eee;
@@ -20,36 +29,38 @@ body {
 
 /* Navigation */
 .menu-bar {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #fff;
   padding: 12px;
   border-bottom: 1px solid #eee;
 }
 .menu-bar a {
-  margin: 0 15px;
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: #444;
+  font-weight: bold;
 }
 .menu-bar a:hover {
-  color: #f4a6c1;
+  color: #f48fb1;
 }
 
 /* Sidebar */
 .slide-menu {
   width: 220px;
   float: left;
-  padding: 15px;
+  background: #fff;
   border-right: 1px solid #eee;
-  background: #fafafa;
+  padding: 20px;
+  height: 100vh;
 }
 .slide-menu h3 {
-  margin-top: 0;
   font-size: 16px;
+  margin-bottom: 10px;
   color: #555;
 }
 .slide-menu ul {
   list-style: none;
-  padding: 0;
 }
 .slide-menu li {
   margin: 6px 0;
@@ -59,14 +70,17 @@ body {
   font-weight: bold;
   display: block;
   margin-top: 10px;
+  color: #444;
 }
 .slide-menu a {
   text-decoration: none;
   color: #666;
   font-size: 14px;
+  display: block;
+  padding: 4px 0;
 }
 .slide-menu a:hover {
-  color: #f4a6c1;
+  color: #f48fb1;
 }
 .nested {
   display: none;
@@ -77,7 +91,11 @@ body {
 .content {
   margin-left: 240px;
   padding: 20px;
-  min-height: 200px;
+  min-height: 80vh;
+  background: #fff;
+  border-radius: 6px;
+  margin: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 /* Buttons */
@@ -85,11 +103,10 @@ button {
   margin-top: 10px;
   padding: 8px 14px;
   border: none;
-  background: #f4a6c1;
+  background: #f48fb1;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
 }
 button:hover {
   background: #e08aa9;
@@ -98,6 +115,14 @@ button:hover {
 /* Dark mode */
 .dark {
   background: #222;
+  color: #eee;
+}
+.dark .header,
+.dark .footer,
+.dark .menu-bar,
+.dark .slide-menu,
+.dark .content {
+  background: #333;
   color: #eee;
 }
 .dark .menu-bar a,
