@@ -1,3 +1,4 @@
+// Show/hide sections with fade
 function showSection(id){
   document.querySelectorAll('.content').forEach(sec=>{
     sec.style.display='none';
@@ -7,135 +8,125 @@ function showSection(id){
   section.style.display='block';
   setTimeout(()=>section.style.opacity=1,50);
 
-  if(id==='outputDemo') outputDemo();
   if(id==='variablesDemo') variablesDemo();
   if(id==='calcDemo') calcDemo();
-  if(id==='promptDemo') promptDemo();
-  if(id==='ageCheck') ageCheck();
   if(id==='loopsDemo') loopsDemo();
 }
 
+// Toggle sidebar tree
 function toggleTree(id){
   const el=document.getElementById(id);
   el.style.display=(el.style.display==='block')?'none':'block';
 }
 
 /* ---------------- Student Basics ---------------- */
-function outputDemo(){
-  alert("Welcome to the Student Portal!");
-  document.getElementById("output1").innerHTML="Ready to learn and succeed 🎓";
-}
+
+// Student Info
 function variablesDemo(){
-  let student="Alex", age=19, course="Computer Science";
-  document.getElementById("output2").innerHTML=`Student: ${student}, Age: ${age}, Course: ${course}`;
+  let name=document.getElementById("studentName").value;
+  let age=document.getElementById("studentAge").value;
+  let course=document.getElementById("studentCourse").value;
+  document.getElementById("output2").innerHTML=`Student: ${name}, Age: ${age}, Course: ${course}`;
 }
+
+// Fees Calculator
 function calcDemo(){
-  let tuition=15000, allowance=5000;
-  document.getElementById("outputCalc").innerHTML=`Total Balance Needed: ₱${tuition+allowance}`;
+  let f1=Number(document.getElementById("fee1").value);
+  let f2=Number(document.getElementById("fee2").value);
+  let f3=Number(document.getElementById("fee3").value);
+  let total=f1+f2+f3;
+  document.getElementById("outputCalc").innerHTML=`Total Fees: ₱${total}`;
 }
-function promptDemo(){
-  let name=prompt("Enter your name:");
-  let fav=prompt("Favorite subject:");
-  document.getElementById("outputPrompt").innerHTML=`Hello ${name}, your favorite subject is ${fav}.`;
-}
-function ageCheck(){
-  let age=prompt("Enter your age:");
-  document.getElementById("outputAge").innerHTML=(age>=18)?"You are eligible for college enrollment.":"You are not yet eligible.";
-}
+
+// Class Hours Loop
 function loopsDemo(){
+  let start=Number(document.getElementById("startHour").value);
+  let end=Number(document.getElementById("endHour").value);
   let schedule="Class hours: ";
-  for(let i=8;i<=16;i++) schedule+=i+":00, ";
+  for(let i=start;i<=end;i++) schedule+=i+":00, ";
   document.getElementById("outputLoops").innerHTML=schedule;
 }
-document.addEventListener("DOMContentLoaded",()=>{
-  const btn=document.getElementById("btnClick");
-  if(btn) btn.addEventListener("click",()=>alert("Your enrollment is confirmed!"));
-});
 
-/* ---------------- Interactive Student Life ---------------- */
+/* ---------------- Student Tools ---------------- */
 document.addEventListener("DOMContentLoaded",()=>{
 
+  // Background Color
   const bgBtn=document.getElementById("bgBtn");
-  if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#e0f7fa");
+  if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#e3f2fd");
 
+  // Dark Mode
   const darkBtn=document.getElementById("darkBtn");
   if(darkBtn) darkBtn.addEventListener("click",()=>document.body.classList.toggle("dark"));
 
+  // Add School Item
   const addItemBtn=document.getElementById("addItemBtn");
   if(addItemBtn) addItemBtn.addEventListener("click",()=>{
-    let li=document.createElement("li");
-    li.textContent="New Subject";
-    document.getElementById("list").appendChild(li);
+    let item=prompt("Enter school item to buy/pay:");
+    if(item){
+      let li=document.createElement("li");
+      li.textContent=item;
+      document.getElementById("list").appendChild(li);
+    }
   });
 
+  // Remove Announcement
   const removeParaBtn=document.getElementById("removeParaBtn");
   if(removeParaBtn) removeParaBtn.addEventListener("click",()=>{
-    let p=document.getElementById("para");
+    let p=document.getElementById("announcement");
     if(p) p.remove();
   });
 
-  const charInput=document.getElementById("charInput");
-  if(charInput) charInput.addEventListener("input",()=>{
-    document.getElementById("charCount").textContent="Characters: "+charInput.value.length;
+  // Essay Character Count
+  const essayInput=document.getElementById("essayInput");
+  if(essayInput) essayInput.addEventListener("input",()=>{
+    document.getElementById("charCount").textContent="Characters: "+essayInput.value.length;
   });
 
-  const calcBtn=document.getElementById("calcBtn");
-  if(calcBtn) calcBtn.addEventListener("click",()=>{
-    let n1=Number(document.getElementById("num1").value);
-    let n2=Number(document.getElementById("num2").value);
-    document.getElementById("calcResult").textContent="Total Grade: "+(n1+n2);
-  });
-
+  // Profile Image Change
   const imgBtn=document.getElementById("imgBtn");
   if(imgBtn) imgBtn.addEventListener("click",()=>{
-    document.getElementById("image").src="https://via.placeholder.com/200/2196f3/fff?text=Student+Life";
+    let url=prompt("Enter image URL for your profile/notes:");
+    if(url) document.getElementById("image").src=url;
   });
 
+  // To-Do List Expanded
   const addTodoBtn=document.getElementById("addTodoBtn");
   if(addTodoBtn) addTodoBtn.addEventListener("click",()=>{
-    const task=document.getElementById("todoInput").value.trim();
+    const month=todoMonth.value, date=todoDate.value, task=todoTask.value,
+          priority=todoPriority.value, notes=todoNotes.value, reminder=todoReminder.value;
     if(task==="") return;
-
-    const li=document.createElement("li");
-    const cb=document.createElement("input");
-    cb.type="checkbox";
-    cb.onchange=()=>li.style.textDecoration=cb.checked?"line-through":"none";
-
-    const span=document.createElement("span");
-    span.textContent=task;
-
-    const edit=document.createElement("button");
-    edit.textContent="✎";
-    edit.onclick=()=>{
-      const nt=prompt("Edit task:", span.textContent);
-      if(nt) span.textContent=nt;
-    };
-
-    const del=document.createElement("button");
-    del.textContent="✖";
-    del.onclick=()=>li.remove();
-
-    li.append(cb,span,edit,del);
+    let li=document.createElement("li");
+    li.innerHTML=`${month} ${date} - ${task} | Priority: ${priority} | Notes: ${notes} | Reminder: ${reminder}`;
     document.getElementById("todoList").appendChild(li);
-    document.getElementById("todoInput").value="";
+    todoMonth.value=""; todoDate.value=""; todoTask.value="";
+    todoPriority.value=""; todoNotes.value=""; todoReminder.value="";
   });
 });
 
+/* ---------------- Calculator Keypad ---------------- */
+function press(val){document.getElementById("calcScreen").value+=val;}
+function calculate(){
+  let exp=document.getElementById("calcScreen").value;
+  try{
+    document.getElementById("calcScreen").value=eval(exp);
+  }catch{
+    document.getElementById("calcScreen").value="Error";
+  }
+}
+
 /* ---------------- Student Grades ---------------- */
 document.addEventListener("DOMContentLoaded",()=>{
+  let history=[];
   const calcGradeBtn=document.getElementById("calcGradeBtn");
   if(calcGradeBtn) calcGradeBtn.addEventListener("click",()=>{
     const quiz=Number(document.getElementById("quiz").value);
     const exam=Number(document.getElementById("exam").value);
     const project=Number(document.getElementById("mco").value);
     const grade=(quiz*0.2)+(exam*0.3)+(project*0.5);
-    let letter="";
-    if(grade>=90) letter="A";
-    else if(grade>=80) letter="B";
-    else if(grade>=70) letter="C";
-    else if(grade>=60) letter="D";
-    else letter="F";
-    document.getElementById("result").innerHTML=`Final Grade: ${grade.toFixed(1)}<br>Letter Grade: ${letter}`;
+    let letter=grade>=90?"A":grade>=80?"B":grade>=70?"C":grade>=60?"D":"F";
+    let result=`Final Grade: ${grade.toFixed(1)} | Letter: ${letter}`;
+    history.push(result);
+    document.getElementById("result").innerHTML=result+`<br><br>History:<br>${history.join("<br>")}`;
   });
 
   const resetBtn=document.getElementById("resetBtn");
