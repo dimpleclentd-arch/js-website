@@ -21,7 +21,7 @@ function toggleTree(id){
 
 // Activity 1: Output
 function outputDemo(){
-  alert("Welcome to JavaScript!");
+  alert("Welcome to Dimple's Nail Salon!");
   console.log("This is my first JS program.");
   document.getElementById("output1").innerHTML="Alert + Console message shown.";
 }
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   // Background Color
   const bgBtn=document.getElementById("bgBtn");
-  if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#ffe4e1");
+  if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#ffe4e1"); // soft pink
 
   // Dark Mode
   const darkBtn=document.getElementById("darkBtn");
