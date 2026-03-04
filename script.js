@@ -1,76 +1,107 @@
 function showSection(sectionId) {
   document.querySelectorAll('.content').forEach(sec => sec.style.display = 'none');
   document.getElementById(sectionId).style.display = 'block';
+
+  if (sectionId === 'ex2a') activity1();
+  if (sectionId === 'ex2b') activity2();
 }
 
-// Activity 1: Welcome
+// Exercise 2 Activity 1: Output
 function activity1() {
-  document.getElementById("output1").innerHTML = "Welcome to Dimple's minimalist salon ✨";
+  alert("Welcome to JavaScript!");
+  console.log("This is my first JS program.");
+  document.getElementById("output1").innerHTML = "Alert + Console message shown.";
 }
 
-// Activity 2: Client Info
+// Exercise 2 Activity 2: Variables
 function activity2() {
-  const name = document.getElementById("clientName").value;
-  const service = document.getElementById("clientService").value;
-  const time = document.getElementById("clientTime").value;
-  document.getElementById("output2").innerHTML =
-    `Client: ${name}<br>Service: ${service}<br>Time: ${time}`;
+  let name = "Dimple";
+  let age = 20;
+  let isStudent = true;
+  console.log(name, age, isStudent);
+  document.getElementById("output2").innerHTML = `My name is ${name}, I am ${age} years old.`;
 }
 
-// Activity 3: Price Calculator
-function activity3() {
-  const p1 = Number(document.getElementById("price1").value) || 0;
-  const p2 = Number(document.getElementById("price2").value) || 0;
-  const p3 = Number(document.getElementById("price3").value) || 0;
-  const total = p1 + p2 + p3;
-  document.getElementById("output3").innerHTML =
-    `Basic Manicure: ₱${p1}<br>Gel Polish: ₱${p2}<br>Nail Art: ₱${p3}<br><strong>Total: ₱${total}</strong>`;
-}
+// Exercise 2 Activity 7: Button
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("btnClick").addEventListener("click", () => {
+    alert("Button Clicked!");
+  });
 
-// Activity 4: Appointment
-function activity4() {
-  const name = document.getElementById("apptName").value;
-  const color = document.getElementById("apptColor").value;
-  document.getElementById("output4").innerHTML =
-    `Appointment booked for ${name} with ${color} nails.`;
-}
+  // Exercise 3 Activity 1: Background Color
+  document.getElementById("bgBtn").addEventListener("click", () => {
+    document.body.style.backgroundColor = "#f4a6c1";
+  });
 
-// Activity 5: Age Check
-function activity5() {
-  const age = Number(document.getElementById("ageInput").value);
-  const msg = age >= 18 ? "Eligible for salon services ✅" : "Sorry, underage ❌";
-  document.getElementById("output5").innerHTML = msg;
-}
+  // Exercise 3 Activity 2: Dark Mode
+  document.getElementById("darkBtn").addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
 
-// Activity 6: Queue Numbers
-function activity6() {
-  const size = Number(document.getElementById("queueNum").value);
-  let queue = [];
-  for (let i = 1; i <= size; i++) {
-    queue.push(i);
-  }
-  document.getElementById("output6").innerHTML = `Queue Numbers: ${queue.join(", ")}`;
-}
+  // Exercise 3 Activity 3: Add List Item
+  document.getElementById("addItemBtn").addEventListener("click", () => {
+    let li = document.createElement("li");
+    li.textContent = "New Item";
+    document.getElementById("list").appendChild(li);
+  });
 
-// Activity 7: Booking Button
-function activity7() {
-  document.getElementById("output7").innerHTML = "Appointment booked successfully! 🎉";
-}
+  // Exercise 3 Activity 4: Remove Paragraph
+  document.getElementById("removeParaBtn").addEventListener("click", () => {
+    let para = document.getElementById("para");
+    if (para) para.remove();
+  });
 
-// Activity 8: To-Do List
-function addTodo() {
-  const task = document.getElementById("todoInput").value.trim();
-  if (task === "") return;
+  // Exercise 3 Activity 5: Character Count
+  document.getElementById("charInput").addEventListener("input", () => {
+    document.getElementById("charCount").textContent =
+      "Characters: " + document.getElementById("charInput").value.length;
+  });
 
-  const li = document.createElement("li");
-  li.textContent = task;
+  // Exercise 3 Activity 6: Calculator
+  document.getElementById("calcBtn").addEventListener("click", () => {
+    let n1 = Number(document.getElementById("num1").value);
+    let n2 = Number(document.getElementById("num2").value);
+    document.getElementById("calcResult").textContent = "Sum: " + (n1 + n2);
+  });
 
-  const removeBtn = document.createElement("button");
-  removeBtn.textContent = "✖";
-  removeBtn.onclick = () => li.remove();
+  // Exercise 3 Activity 7: Change Image
+  document.getElementById("imgBtn").addEventListener("click", () => {
+    document.getElementById("image").src = "https://via.placeholder.com/200";
+  });
 
-  li.appendChild(removeBtn);
-  document.getElementById("todoList").appendChild(li);
+  // Exercise 3 Activity 8: To-Do List CRUD
+  document.getElementById("addTodoBtn").addEventListener("click", () => {
+    const task = document.getElementById("todoInput").value.trim();
+    if (task === "") return;
 
-  document.getElementById("todoInput").value = "";
-}
+    const li = document.createElement("li");
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.onchange = () => {
+      li.style.textDecoration = checkbox.checked ? "line-through" : "none";
+    };
+
+    const span = document.createElement("span");
+    span.textContent = task;
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "✎";
+    editBtn.onclick = () => {
+      const newTask = prompt("Edit task:", span.textContent);
+      if (newTask) span.textContent = newTask;
+    };
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "✖";
+    removeBtn.onclick = () => li.remove();
+
+    li.appendChild(checkbox);
+    li.appendChild(span);
+    li.appendChild(editBtn);
+    li.appendChild(removeBtn);
+
+    document.getElementById("todoList").appendChild(li);
+    document.getElementById("todoInput").value = "";
+  });
+});
