@@ -12,31 +12,32 @@ body{
 /* Header & Footer */
 .header,.footer{
   text-align:center;
-  padding:30px;
+  padding:40px 20px;
   background:#fff;
   border-bottom:1px solid #eee;
   box-shadow:0 2px 6px rgba(0,0,0,0.05);
 }
 .header h1{
   font-family:'Brush Script MT', cursive;
-  font-size:2.5rem;
+  font-size:3rem;
   color:#d46a92;
 }
 .header p{
-  font-size:1.1rem;
+  font-size:1.2rem;
   color:#777;
 }
 .footer{
   border-top:1px solid #eee;
   font-size:13px;
   color:#999;
+  background:#fff;
 }
 
 /* Navigation */
 .menu-bar{
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:40px;
   background:#fff;
   padding:15px;
   border-bottom:1px solid #eee;
@@ -51,20 +52,20 @@ body{
 
 /* Sidebar */
 .slide-menu{
-  width:220px;
+  width:240px;
   float:left;
   background:#fff;
   border-right:1px solid #eee;
-  padding:20px;
+  padding:25px;
   height:100vh;
 }
 .slide-menu h3{
-  font-size:1.2rem;
-  margin-bottom:10px;
+  font-size:1.3rem;
+  margin-bottom:15px;
   color:#d46a92;
 }
 .slide-menu ul{list-style:none}
-.slide-menu li{margin:8px 0}
+.slide-menu li{margin:10px 0}
 .slide-menu span{
   cursor:pointer;
   font-weight:bold;
@@ -73,7 +74,7 @@ body{
 .slide-menu a{
   text-decoration:none;
   color:#666;
-  font-size:14px;
+  font-size:15px;
   transition:color 0.3s;
 }
 .slide-menu a:hover{color:#d46a92}
@@ -81,46 +82,48 @@ body{
 
 /* Content */
 .content{
-  margin-left:240px;
-  padding:20px;
+  margin-left:260px;
+  padding:30px;
   min-height:60vh;
   background:#fff;
-  border-radius:8px;
+  border-radius:10px;
   margin:20px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  transition:all 0.3s ease;
 }
+.content:hover{box-shadow:0 6px 16px rgba(0,0,0,0.12)}
 
 /* Inputs */
 input{
   display:block;
-  margin:10px 0;
-  padding:10px;
+  margin:12px 0;
+  padding:12px;
   width:100%;
-  max-width:300px;
+  max-width:320px;
   border:1px solid #ccc;
-  border-radius:4px;
+  border-radius:6px;
 }
 
 /* Buttons */
 button{
   margin-top:10px;
-  padding:10px 16px;
+  padding:12px 18px;
   border:none;
   background:#d46a92;
   color:#fff;
-  border-radius:4px;
+  border-radius:6px;
   cursor:pointer;
   transition:background 0.3s;
 }
 button:hover{background:#b94f78}
 
 /* To-Do List */
-#todoList{list-style:none;margin-top:10px;padding:0}
+#todoList{list-style:none;margin-top:12px;padding:0}
 #todoList li{
   display:flex;
   align-items:center;
   gap:10px;
-  margin:6px 0;
+  margin:8px 0;
 }
 #todoList button{
   background:transparent;
@@ -132,7 +135,7 @@ button:hover{background:#b94f78}
 #todoList button:hover{color:#d46a92}
 
 /* Images */
-img{max-width:200px;border-radius:8px;margin-top:10px}
+img{max-width:220px;border-radius:10px;margin-top:12px}
 
 /* Grade Calculator */
 #result{margin-top:15px;font-weight:bold;color:#d46a92}
