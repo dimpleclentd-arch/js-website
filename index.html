@@ -3,108 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dimple's JavaScript Exercises ✨</title>
+  <title>Dimple's JavaScript Playground ✨</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
-    <h1>JavaScript Exercises</h1>
-    <p>Date of Submission: February 17, 2026</p>
+    <h1>JavaScript Playground</h1>
+    <p>Learn by doing — clean & modern</p>
   </header>
 
-  <!-- Menu Bar -->
   <nav class="menu-bar">
-    <a href="#" onclick="showSection('exercise1')">Exercise 1</a>
-    <a href="#" onclick="showSection('exercise2')">Exercise 2</a>
-    <a href="#" onclick="showSection('exercise3')">Exercise 3</a>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('about')">About</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
   </nav>
 
-  <!-- Sidebar Tree -->
   <aside class="slide-menu">
     <h3>Activities</h3>
     <ul>
-      <li><a href="#" onclick="showSection('activity1')">Exercise 2 → Output</a></li>
-      <li><a href="#" onclick="showSection('activity2')">Exercise 2 → Variables</a></li>
-      <li><a href="#" onclick="showSection('activity7')">Exercise 2 → Button</a></li>
-      <li><a href="#" onclick="showSection('ex3a')">Exercise 3 → Background Color</a></li>
-      <li><a href="#" onclick="showSection('ex3b')">Exercise 3 → Dark Mode</a></li>
-      <li><a href="#" onclick="showSection('ex3c')">Exercise 3 → Add List Item</a></li>
-      <li><a href="#" onclick="showSection('ex3d')">Exercise 3 → Remove Paragraph</a></li>
-      <li><a href="#" onclick="showSection('ex3e')">Exercise 3 → Character Count</a></li>
-      <li><a href="#" onclick="showSection('ex3f')">Exercise 3 → Calculator</a></li>
-      <li><a href="#" onclick="showSection('ex3g')">Exercise 3 → Change Image</a></li>
-      <li><a href="#" onclick="showSection('ex3h')">Exercise 3 → To‑Do List</a></li>
+      <li>
+        <span onclick="toggleTree('basics')">Basics ▸</span>
+        <ul id="basics" class="nested">
+          <li><a href="#" onclick="showSection('outputDemo')">Output Demo</a></li>
+          <li><a href="#" onclick="showSection('variablesDemo')">Variables</a></li>
+        </ul>
+      </li>
+      <li>
+        <span onclick="toggleTree('handsOn')">Hands‑On ▸</span>
+        <ul id="handsOn" class="nested">
+          <li><a href="#" onclick="showSection('buttonDemo')">Button Alert</a></li>
+        </ul>
+      </li>
+      <li>
+        <span onclick="toggleTree('dom')">DOM Interaction ▸</span>
+        <ul id="dom" class="nested">
+          <li><a href="#" onclick="showSection('bgColor')">Background Color</a></li>
+          <li><a href="#" onclick="showSection('darkMode')">Dark Mode</a></li>
+          <li><a href="#" onclick="showSection('listAdd')">Add List Item</a></li>
+          <li><a href="#" onclick="showSection('removePara')">Remove Paragraph</a></li>
+          <li><a href="#" onclick="showSection('charCount')">Character Count</a></li>
+          <li><a href="#" onclick="showSection('calculator')">Calculator</a></li>
+          <li><a href="#" onclick="showSection('imageChange')">Change Image</a></li>
+          <li><a href="#" onclick="showSection('todo')">To‑Do List</a></li>
+        </ul>
+      </li>
     </ul>
   </aside>
 
-  <!-- Content Sections -->
   <main>
-    <!-- Exercise 1 -->
-    <section class="content" id="exercise1">
-      <h2>Exercise 1: Basic HTML Layout</h2>
-      <p>This page already demonstrates header, menu bar, slide menu, content, and footer using divs and external CSS.</p>
+    <section class="content" id="home">
+      <p>Welcome to your modern JavaScript playground ✨</p>
     </section>
 
-    <!-- Exercise 2 -->
-    <section class="content" id="exercise2" style="display:none;">
-      <h2>Exercise 2: JavaScript Hands-On</h2>
-      <p>Click activities in the sidebar to test outputs.</p>
+    <section class="content" id="about" style="display:none;">
+      <h2>About</h2>
+      <input type="text" id="aboutInput" placeholder="Tell us your style ✨">
     </section>
 
-    <!-- Exercise 3 -->
-    <section class="content" id="exercise3" style="display:none;">
-      <h2>Exercise 3: JavaScript + HTML Interaction</h2>
-      <p>Click activities in the sidebar to test features.</p>
+    <section class="content" id="contact" style="display:none;">
+      <p>Email: nails@dimple.com</p>
+      <p>Phone: 123‑456‑7890</p>
     </section>
 
-    <!-- Activity Outputs -->
-    <section class="content" id="activity1" style="display:none;"><div id="output1"></div></section>
-    <section class="content" id="activity2" style="display:none;"><div id="output2"></div></section>
-    <section class="content" id="activity7" style="display:none;">
-      <button id="btnClick">Click Me</button>
-    </section>
-
-    <!-- Exercise 3 Activities -->
-    <section class="content" id="ex3a" style="display:none;">
-      <button id="bgBtn">Change Background</button>
-    </section>
-    <section class="content" id="ex3b" style="display:none;">
-      <button id="darkBtn">Toggle Dark Mode</button>
-    </section>
-    <section class="content" id="ex3c" style="display:none;">
-      <button id="addItemBtn">Add List Item</button>
-      <ul id="list"></ul>
-    </section>
-    <section class="content" id="ex3d" style="display:none;">
-      <p id="para">This paragraph will be removed.</p>
-      <button id="removeParaBtn">Remove Paragraph</button>
-    </section>
-    <section class="content" id="ex3e" style="display:none;">
-      <input type="text" id="charInput" placeholder="Type here">
-      <p id="charCount">Characters: 0</p>
-    </section>
-    <section class="content" id="ex3f" style="display:none;">
-      <input type="number" id="num1" placeholder="Number 1">
-      <input type="number" id="num2" placeholder="Number 2">
-      <button id="calcBtn">Add</button>
-      <p id="calcResult"></p>
-    </section>
-    <section class="content" id="ex3g" style="display:none;">
-      <img id="image" src="https://via.placeholder.com/150" alt="Placeholder">
-      <button id="imgBtn">Change Image</button>
-    </section>
-    <section class="content" id="ex3h" style="display:none;">
-      <input type="text" id="todoInput" placeholder="New task">
-      <button id="addTodoBtn">Add</button>
-      <ul id="todoList"></ul>
-    </section>
+    <!-- Activity sections -->
+    <section class="content" id="outputDemo" style="display:none;"><div id="output1"></div></section>
+    <section class="content" id="variablesDemo" style="display:none;"><div id="output2"></div></section>
+    <section class="content" id="buttonDemo" style="display:none;"><button id="btnClick">Click Me</button></section>
+    <section class="content" id="bgColor" style="display:none;"><button id="bgBtn">Change Background</button></section>
+    <section class="content" id="darkMode" style="display:none;"><button id="darkBtn">Toggle Dark Mode</button></section>
+    <section class="content" id="listAdd" style="display:none;"><button id="addItemBtn">Add Item</button><ul id="list"></ul></section>
+    <section class="content" id="removePara" style="display:none;"><p id="para">This will be removed.</p><button id="removeParaBtn">Remove</button></section>
+    <section class="content" id="charCount" style="display:none;"><input type="text" id="charInput"><p id="charCount">Characters: 0</p></section>
+    <section class="content" id="calculator" style="display:none;"><input type="number" id="num1"><input type="number" id="num2"><button id="calcBtn">Add</button><p id="calcResult"></p></section>
+    <section class="content" id="imageChange" style="display:none;"><img id="image" src="https://via.placeholder.com/150"><button id="imgBtn">Change Image</button></section>
+    <section class="content" id="todo" style="display:none;"><input type="text" id="todoInput"><button id="addTodoBtn">Add</button><ul id="todoList"></ul></section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2026 Dimple's Exercises</p>
+    <p>&copy; 2026 Dimple's Playground</p>
   </footer>
 </body>
 </html>
