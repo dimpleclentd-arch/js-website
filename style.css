@@ -1,14 +1,106 @@
-body { margin:0; font-family:'Helvetica Neue',Arial,sans-serif; background:#fff; color:#333; }
-.header, .footer { text-align:center; padding:20px; border-bottom:1px solid #eee; }
-.menu-bar { text-align:center; padding:10px; border-bottom:1px solid #eee; }
-.menu-bar a { margin:0 15px; text-decoration:none; color:#333; }
-.menu-bar a:hover { color:#f4a6c1; }
-.slide-menu { width:200px; float:left; padding:15px; border-right:1px solid #eee; }
-.slide-menu ul { list-style:none; padding:0; }
-.slide-menu li { margin:8px 0; }
-.slide-menu span { cursor:pointer; font-weight:bold; }
-.nested { display:none; margin-left:15px; }
-.content { margin-left:220px; padding:20px; min-height:200px; }
-button { margin-top:10px; padding:6px 12px; border:none; background:#f4a6c1; color:#fff; border-radius:4px; cursor:pointer; }
-button:hover { background:#e08aa9; }
-.dark { background:#222; color:#eee; }
+/* Global layout */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Header & Footer */
+.header, .footer {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+.footer {
+  border-top: 1px solid #eee;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Navigation */
+.menu-bar {
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.menu-bar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.menu-bar a:hover {
+  color: #f4a6c1;
+}
+
+/* Sidebar */
+.slide-menu {
+  width: 220px;
+  float: left;
+  padding: 15px;
+  border-right: 1px solid #eee;
+  background: #fafafa;
+}
+.slide-menu h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #555;
+}
+.slide-menu ul {
+  list-style: none;
+  padding: 0;
+}
+.slide-menu li {
+  margin: 6px 0;
+}
+.slide-menu span {
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+.slide-menu a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+}
+.slide-menu a:hover {
+  color: #f4a6c1;
+}
+.nested {
+  display: none;
+  margin-left: 15px;
+}
+
+/* Content */
+.content {
+  margin-left: 240px;
+  padding: 20px;
+  min-height: 200px;
+}
+
+/* Buttons */
+button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  background: #f4a6c1;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover {
+  background: #e08aa9;
+}
+
+/* Dark mode */
+.dark {
+  background: #222;
+  color: #eee;
+}
+.dark .menu-bar a,
+.dark .slide-menu a {
+  color: #eee;
+}
