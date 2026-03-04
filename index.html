@@ -8,17 +8,20 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
     <h1>Dimple's Nail Salon</h1>
     <p>Sparkle with simplicity 💅</p>
   </header>
 
+  <!-- Navigation -->
   <nav class="menu-bar">
     <a href="#" onclick="showSection('homeSection')">Home</a>
     <a href="#" onclick="showSection('aboutSection')">About</a>
     <a href="#" onclick="showSection('contactSection')">Contact</a>
   </nav>
 
+  <!-- Sidebar -->
   <aside class="slide-menu">
     <ul>
       <li><a href="#" onclick="showSection('activity1')">Welcome</a></li>
@@ -32,16 +35,20 @@
     </ul>
   </aside>
 
+  <!-- Sections -->
   <main>
+    <!-- Home -->
     <section class="content" id="homeSection">
       <p>Minimal beauty, maximum sparkle ✨</p>
     </section>
 
+    <!-- About -->
     <section class="content" id="aboutSection" style="display:none;">
       <h2>About</h2>
       <input type="text" id="aboutInput" placeholder="Your nail style ✨">
     </section>
 
+    <!-- Contact -->
     <section class="content" id="contactSection" style="display:none;">
       <p>Email: nails@dimple.com</p>
       <p>Phone: 123-456-7890</p>
@@ -99,6 +106,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2026 Dimple's Nail Salon</p>
   </footer>
