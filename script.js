@@ -50,7 +50,7 @@ function loopsDemo(){
 /* ---------------- Student Tools ---------------- */
 document.addEventListener("DOMContentLoaded",()=>{
 
-  // Background Color
+  // Background Color (whole page)
   const bgBtn=document.getElementById("bgBtn");
   if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#e3f2fd");
 
@@ -89,14 +89,18 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(url) document.getElementById("image").src=url;
   });
 
-  // To-Do List Expanded
+  // To-Do List Expanded (Month, Date, Task, Priority, Notes, Reminder)
   const addTodoBtn=document.getElementById("addTodoBtn");
   if(addTodoBtn) addTodoBtn.addEventListener("click",()=>{
     const month=todoMonth.value, date=todoDate.value, task=todoTask.value,
           priority=todoPriority.value, notes=todoNotes.value, reminder=todoReminder.value;
     if(task==="") return;
     let li=document.createElement("li");
-    li.innerHTML=`${month} ${date} - ${task} | Priority: ${priority} | Notes: ${notes} | Reminder: ${reminder}`;
+    li.innerHTML=`<strong>${month} ${date}</strong><br>
+                  Task: ${task}<br>
+                  Priority: ${priority}<br>
+                  Notes: ${notes}<br>
+                  Reminder: ${reminder}`;
     document.getElementById("todoList").appendChild(li);
     todoMonth.value=""; todoDate.value=""; todoTask.value="";
     todoPriority.value=""; todoNotes.value=""; todoReminder.value="";
