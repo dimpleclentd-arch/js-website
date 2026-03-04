@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dimple's Nail Salon ✨</title>
+  <title>Student Portal ✨</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Hero Header -->
+  <!-- Header -->
   <header class="header">
-    <div class="hero">
-      <h1>Dimple's Nail Salon</h1>
-      <p>Minimal beauty, maximum sparkle 💅</p>
-    </div>
+    <h1>Student Portal</h1>
+    <p>Organize, Learn, and Succeed 🎓</p>
   </header>
 
   <!-- Navigation -->
@@ -24,30 +22,26 @@
 
   <!-- Sidebar -->
   <aside class="slide-menu">
-    <h3>Salon Exercises</h3>
+    <h3>Exercises</h3>
     <ul>
       <li>
-        <span onclick="toggleTree('ex2')">Basics ▸</span>
+        <span onclick="toggleTree('ex2')">Student Basics ▸</span>
         <ul id="ex2" class="nested">
-          <li><a href="#" onclick="showSection('outputDemo')">Welcome Message</a></li>
-          <li><a href="#" onclick="showSection('variablesDemo')">Client Variables</a></li>
-          <li><a href="#" onclick="showSection('calcDemo')">Simple Calculator</a></li>
-          <li><a href="#" onclick="showSection('promptDemo')">Prompt Input</a></li>
-          <li><a href="#" onclick="showSection('ageCheck')">Age Check</a></li>
-          <li><a href="#" onclick="showSection('loopsDemo')">Loops</a></li>
-          <li><a href="#" onclick="showSection('buttonDemo')">Button Alert</a></li>
+          <li><a href="#" onclick="showSection('variablesDemo')">Student Info</a></li>
+          <li><a href="#" onclick="showSection('calcDemo')">Fees Calculator</a></li>
+          <li><a href="#" onclick="showSection('loopsDemo')">Class Hours</a></li>
         </ul>
       </li>
       <li>
-        <span onclick="toggleTree('ex3')">Interactive ▸</span>
+        <span onclick="toggleTree('ex3')">Student Tools ▸</span>
         <ul id="ex3" class="nested">
           <li><a href="#" onclick="showSection('bgColor')">Background Color</a></li>
           <li><a href="#" onclick="showSection('darkMode')">Dark Mode</a></li>
-          <li><a href="#" onclick="showSection('listAdd')">Add List Item</a></li>
-          <li><a href="#" onclick="showSection('removePara')">Remove Paragraph</a></li>
-          <li><a href="#" onclick="showSection('charCount')">Character Count</a></li>
+          <li><a href="#" onclick="showSection('listAdd')">Add School Item</a></li>
+          <li><a href="#" onclick="showSection('removePara')">Remove Announcement</a></li>
+          <li><a href="#" onclick="showSection('charCount')">Essay Character Count</a></li>
           <li><a href="#" onclick="showSection('calculator')">Calculator</a></li>
-          <li><a href="#" onclick="showSection('imageChange')">Change Image</a></li>
+          <li><a href="#" onclick="showSection('imageChange')">Change Profile Image</a></li>
           <li><a href="#" onclick="showSection('todo')">To‑Do List</a></li>
         </ul>
       </li>
@@ -62,40 +56,72 @@
 
   <!-- Main Content -->
   <main>
-    <section class="content" id="home"><p>Welcome to the salon ✨</p></section>
-    <section class="content" id="about" style="display:none;"><input type="text" id="aboutInput" placeholder="Your nail style ✨"></section>
-    <section class="content" id="contact" style="display:none;"><p>Email: nails@dimple.com</p></section>
+    <section class="content" id="home"><p>Welcome to the Student Portal ✨</p></section>
+    <section class="content" id="about" style="display:none;"><p>This portal helps students manage tasks, fees, and grades.</p></section>
+    <section class="content" id="contact" style="display:none;"><p>Email: studentportal@example.com</p></section>
 
-    <!-- Exercise 2 -->
-    <section class="content" id="outputDemo" style="display:none;"><div id="output1"></div></section>
-    <section class="content" id="variablesDemo" style="display:none;"><div id="output2"></div></section>
-    <section class="content" id="calcDemo" style="display:none;"><div id="outputCalc"></div></section>
-    <section class="content" id="promptDemo" style="display:none;"><div id="outputPrompt"></div></section>
-    <section class="content" id="ageCheck" style="display:none;"><div id="outputAge"></div></section>
-    <section class="content" id="loopsDemo" style="display:none;"><div id="outputLoops"></div></section>
-    <section class="content" id="buttonDemo" style="display:none;"><button id="btnClick">Click Me</button></section>
+    <!-- Student Basics -->
+    <section class="content" id="variablesDemo" style="display:none;">
+      <input type="text" id="studentName" placeholder="Enter your name">
+      <input type="number" id="studentAge" placeholder="Enter your age">
+      <input type="text" id="studentCourse" placeholder="Enter your course">
+      <button onclick="variablesDemo()">Submit</button>
+      <div id="output2"></div>
+    </section>
 
-    <!-- Exercise 3 -->
+    <section class="content" id="calcDemo" style="display:none;">
+      <input type="number" id="fee1" placeholder="T-shirt ₱450">
+      <input type="number" id="fee2" placeholder="Books ₱800">
+      <input type="number" id="fee3" placeholder="Misc ₱300">
+      <button onclick="calcDemo()">Calculate Total</button>
+      <div id="outputCalc"></div>
+    </section>
+
+    <section class="content" id="loopsDemo" style="display:none;">
+      <input type="number" id="startHour" placeholder="Start hour (e.g. 8)">
+      <input type="number" id="endHour" placeholder="End hour (e.g. 16)">
+      <button onclick="loopsDemo()">Show Schedule</button>
+      <div id="outputLoops"></div>
+    </section>
+
+    <!-- Student Tools -->
     <section class="content" id="bgColor" style="display:none;"><button id="bgBtn">Change Background</button></section>
     <section class="content" id="darkMode" style="display:none;"><button id="darkBtn">Toggle Dark Mode</button></section>
     <section class="content" id="listAdd" style="display:none;"><button id="addItemBtn">Add Item</button><ul id="list"></ul></section>
-    <section class="content" id="removePara" style="display:none;"><p id="para">This will be removed.</p><button id="removeParaBtn">Remove</button></section>
-    <section class="content" id="charCount" style="display:none;"><input type="text" id="charInput"><p id="charCount">Characters: 0</p></section>
-    <section class="content" id="calculator" style="display:none;"><input type="number" id="num1"><input type="number" id="num2"><button id="calcBtn">Add</button><p id="calcResult"></p></section>
+    <section class="content" id="removePara" style="display:none;"><p id="announcement">Announcement: Submit assignments by Friday!</p><button id="removeParaBtn">Remove Announcement</button></section>
+    <section class="content" id="charCount" style="display:none;"><textarea id="essayInput" placeholder="Type your essay..."></textarea><p id="charCount">Characters: 0</p></section>
+    <section class="content" id="calculator" style="display:none;">
+      <input type="text" id="calcScreen" readonly>
+      <div class="calc-buttons">
+        <button onclick="press('7')">7</button><button onclick="press('8')">8</button><button onclick="press('9')">9</button><button onclick="press('+')">+</button><br>
+        <button onclick="press('4')">4</button><button onclick="press('5')">5</button><button onclick="press('6')">6</button><button onclick="press('-')">-</button><br>
+        <button onclick="press('1')">1</button><button onclick="press('2')">2</button><button onclick="press('3')">3</button><button onclick="press('*')">×</button><br>
+        <button onclick="press('0')">0</button><button onclick="press('.')">.</button><button onclick="calculate()">=</button><button onclick="press('/')">÷</button>
+      </div>
+    </section>
     <section class="content" id="imageChange" style="display:none;"><img id="image" src="https://via.placeholder.com/150"><button id="imgBtn">Change Image</button></section>
-    <section class="content" id="todo" style="display:none;"><input type="text" id="todoInput"><button id="addTodoBtn">Add</button><ul id="todoList"></ul></section>
+    <section class="content" id="todo" style="display:none;">
+      <input type="text" id="todoMonth" placeholder="Month">
+      <input type="text" id="todoDate" placeholder="Date">
+      <input type="text" id="todoTask" placeholder="To Do">
+      <input type="text" id="todoPriority" placeholder="Priority">
+      <input type="text" id="todoNotes" placeholder="Notes">
+      <input type="text" id="todoReminder" placeholder="Reminder">
+      <button id="addTodoBtn">Add Task</button>
+      <ul id="todoList"></ul>
+    </section>
 
-    <!-- Exercise 4 -->
+    <!-- Grades -->
     <section class="content" id="gradeCalc" style="display:none;">
       <input type="number" id="quiz" placeholder="Quiz Average (0-100)">
       <input type="number" id="exam" placeholder="Exam Score (0-100)">
-      <input type="number" id="mco" placeholder="MCO Score (0-100)">
+      <input type="number" id="mco" placeholder="Project Score (0-100)">
       <button id="calcGradeBtn">Calculate Grade</button>
       <button id="resetBtn">Reset</button>
       <div id="result"></div>
     </section>
   </main>
 
-  <footer class="footer"><p>&copy; 2026 Dimple's Nail Salon</p></footer>
+  <footer class="footer"><p>&copy; 2026 Student Portal</p></footer>
 </body>
 </html>
