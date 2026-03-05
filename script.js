@@ -30,9 +30,19 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
   });
 
-  // Dark mode toggle (fixed)
-  const darkBtn=document.getElementById("darkBtn");
-  if(darkBtn) darkBtn.addEventListener("click",()=>{
+document.addEventListener("DOMContentLoaded", () => {
+  // Background color changer
+  const bgBtn = document.getElementById("bgBtn");
+  if (bgBtn) bgBtn.addEventListener("click", () => {
+    // Only toggle background if NOT in dark mode
+    if (!document.body.classList.contains("dark")) {
+      document.body.classList.toggle("bg-alt");
+    }
+  });
+
+  // Dark mode toggle
+  const darkBtn = document.getElementById("darkBtn");
+  if (darkBtn) darkBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
     // Reset background toggle when entering dark mode
@@ -40,6 +50,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       document.body.classList.remove("bg-alt");
     }
   });
+});
 
   // Add school item
   const addItemBtn=document.getElementById("addItemBtn");
