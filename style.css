@@ -21,12 +21,12 @@ body {
 .header, .footer {
   text-align: center;
   padding: 30px;
-  background: #fff;
+  background: linear-gradient(to right, #fff5f8, #ffffff); /* soft gradient */
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 .header h1 {
   font-size: 2.5rem;
-  color: #d46a92; /* soft rose accent */
+  color: #d46a92; /* rose accent */
 }
 .header p {
   color: #777;
@@ -125,7 +125,7 @@ button {
 }
 button:hover { background: #b94f78; }
 
-/* To-Do List (structured like template) */
+/* To-Do List */
 #todoList { list-style: none; margin-top: 12px; padding: 0; }
 #todoList li {
   display: block;
