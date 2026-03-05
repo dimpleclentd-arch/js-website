@@ -5,6 +5,18 @@ body {
   background: #fff9fb; /* soft pink background */
   color: #444;
   line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Alternate background */
+body.bg-alt {
+  background: #ffeef5;
+}
+
+/* Dark mode overrides everything */
+body.dark {
+  background: #1e1e1e;
+  color: #eee;
 }
 
 /* Banner Image */
@@ -114,10 +126,7 @@ main {
   color: #666;
 }
 
-body.dark {
-  background: #1e1e1e;
-  color: #eee;
-}
+/* Dark mode refinements */
 body.dark .header {
   background: linear-gradient(135deg, #444, #222);
 }
