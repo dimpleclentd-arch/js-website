@@ -34,7 +34,7 @@ body.dark-mode {
 
 /* ==================== HEADER WITH BANNER IMAGE ==================== */
 .header {
-  position: relative;
+
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   padding: 0;
   overflow: hidden;
