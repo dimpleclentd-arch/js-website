@@ -185,27 +185,6 @@ function calcFees() {
 }
 
 /* ==================== GRADE CALCULATOR SECTION ==================== */
-<section class="content" id="gradeCalc" style="display:none;">
-  <h2>📊 Grade Calculator</h2>
-  
-  <div class="quiz-container">
-    <h3 style="text-align: center; margin-bottom: 15px;">Add Quiz Scores</h3>
-    <div id="quizInputs">
-      <!-- Quiz inputs will be added here dynamically -->
-    </div>
-    
-    <button class="add-quiz-btn" onclick="addQuizInput()">+ Add Another Quiz</button>
-    <button class="calculate-btn" onclick="calculateGrade()">Calculate Grade</button>
-    <button class="calculate-btn" onclick="resetGrade()" style="background: #ff6b6b;">Reset</button>
-    
-    <div class="result-box" id="resultBox" style="display: none;">
-      <h3>Your Grade</h3>
-      <p id="gradeResult">0%</p>
-    </div>
-  </div>
-</section>
-
-<!-- JAVASCRIPT FOR GRADE CALCULATOR -->
 <script>
   let quizCount = 0;
 
@@ -243,22 +222,3 @@ function calcFees() {
         count++;
       }
     });
-
-    if (count === 0) {
-      alert('Please enter at least one quiz score!');
-      return;
-    }
-
-    const average = totalScore / count;
-    document.getElementById('gradeResult').textContent = average.toFixed(2) + '%';
-    document.getElementById('resultBox').style.display = 'block';
-  }
-
-  // Reset all quiz inputs
-  function resetGrade() {
-    document.getElementById('quizInputs').innerHTML = '';
-    document.getElementById('resultBox').style.display = 'none';
-    document.getElementById('gradeResult').textContent = '0%';
-    quizCount = 0;
-  }
-</script>
