@@ -36,15 +36,10 @@ body.dark-mode {
 /* ==================== HEADER WITH BANNER IMAGE ==================== */
 .header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  /* Fixed: Reduced padding from 500px to 40px */
-  padding: 40px 20px; 
+  padding: 40px 20px;
   overflow: hidden;
-  /* Fixed: Removed margin-left: 500px */
-  
-  /* Added: Center the header block itself */
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
 }
 
 /* Banner Image */
@@ -127,6 +122,7 @@ main {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   flex-shrink: 0;
+  text-align: center; /* Center sidebar content */
 }
 
 .slide-menu h3 {
@@ -134,10 +130,17 @@ main {
   color: var(--primary-dark);
   border-bottom: 2px solid var(--primary-light);
   padding-bottom: 10px;
+  text-align: center; /* Center headings */
 }
 
-.slide-menu ul { list-style: none; }
-.slide-menu li { margin-bottom: 8px; }
+.slide-menu ul { 
+  list-style: none; 
+  text-align: center; /* Center list items */
+}
+
+.slide-menu li { 
+  margin-bottom: 8px; 
+}
 
 .slide-menu span {
   cursor: pointer;
@@ -146,6 +149,7 @@ main {
   border-radius: var(--radius);
   display: block;
   transition: all 0.3s;
+  text-align: center; /* Center span text */
 }
 
 .slide-menu span:hover {
@@ -157,6 +161,7 @@ main {
   display: none;
   padding-left: 25px;
   list-style: none;
+  text-align: center; /* Center nested items */
 }
 
 .nested li a {
@@ -166,6 +171,7 @@ main {
   padding: 6px 10px;
   border-radius: var(--radius);
   transition: all 0.3s;
+  text-align: center; /* Center nested link text */
 }
 
 .nested li a:hover {
@@ -186,6 +192,7 @@ main {
 .content h2 {
   color: var(--primary-dark);
   margin-bottom: 20px;
+  text-align: center; /* Center content headings */
 }
 
 /* ==================== PROFILE IMAGE STYLES ==================== */
@@ -292,6 +299,7 @@ ul#list li, ul#reminderList li, ul#todoList li {
   margin-bottom: 8px;
   border-radius: var(--radius);
   border-left: 4px solid var(--primary);
+  text-align: center; /* Center list items */
 }
 
 /* ==================== FOOTER ==================== */
