@@ -213,15 +213,13 @@
 
     <!-- GRADES -->
     <section class="content" id="gradeCalc" style="display:none;">
-      <h2>📊 Grade Calculator</h2>
-      <input type="number" id="quiz" placeholder="Quiz Score">
-      <input type="number" id="exam" placeholder="Exam Score">
-      <input type="number" id="mco" placeholder="Project Score">
-      <button id="calcGradeBtn">Calculate Grade</button>
-      <button id="resetBtn">Reset</button>
-      <div id="result"></div>
-    </section>
-  </main>
+    <h2>📊 Grade Calculator</h2>
+    <button onclick="addQuizInput()">+ Add Quiz Score</button>
+    <div id="quizInputs"></div>
+    <button onclick="calculateGrade()" style="margin-top: 15px; padding: 10px 20px; background-color: #27ae60; color: white; border: none; border-radius: 5px; cursor: pointer;">Calculate Average</button>
+    <button onclick="resetQuiz()" style="margin-top: 15px; padding: 10px 20px; background-color: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer;">Reset</button>
+    <div id="gradeResult" style="margin-top: 15px; font-size: 18px;"></div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer"><p>&copy; 2026 StudySpace</p></footer>
@@ -229,3 +227,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
